@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto&family=Ubuntu&display=swap");
 
 * {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
@@ -9,7 +10,7 @@
 
 div#main-grid-container {
   display: grid;
-  grid-template: repeat(10, minmax(100px, 1fr)) / repeat(5, minmax(100px, 1fr));
+  grid-template: repeat(10, minmax(50px, 1fr)) / repeat(5, minmax(160px, 1fr));
 }
 
 /*Whole Page Grid Ended*/
@@ -20,16 +21,21 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 div#sidebar {
   display: grid;
   border: 5px solid #4ade80;
-  grid-template: repeat(16, 1fr) / 1fr;
+  grid-template: repeat(16, minmax(75px, 1fr)) / repeat(1, minmax(50px, 1fr));
   grid-row: 1/11;
 }
 
 .sidebar-icons {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 .dashboard > span {
@@ -107,6 +113,7 @@ span#search-bar {
 }
 
 span#notification {
+  grid-area: 1/7/2/8;
   justify-self: flex-end;
   align-self: center;
 }
@@ -116,12 +123,23 @@ span.github {
   align-self: center;
 }
 
+#account {
+  grid-area: 1/8/2/9;
+}
+
+#name {
+  grid-area: 1/9/2/10;
+}
+
 input {
   width: 80ch;
   height: 30px;
   border-radius: 30px;
   background-color: #e2e8f0;
-  grid-area: 2/6;
+}
+
+input#search-bar {
+  grid-area: 1/2/2/7;
 }
 
 #second-row-account {
@@ -164,6 +182,7 @@ button#third-button {
   max-width: 100px;
   min-height: 35px;
   max-height: 75px;
+  margin-left: 10px;
   border-radius: 20px;
   background-color: #22c55e;
   align-items: center;
@@ -179,4 +198,172 @@ div#main-content {
   border: 5px solid #8b5cf6;
   grid-row: 3/11;
   grid-column: 2/6;
+}
+
+div#main-content > div {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: #e2e8f0;
+  border-top: 5px solid #cbd5e1;
+  grid-template: repeat(16, minmax(50px, 1fr)) / repeat(3, minmax(160px, 1fr));
+}
+
+div#main-content > div > span:nth-child(1) {
+  display: grid;
+  grid-area: 1/1/2/3;
+  align-items: center;
+  justify-content: center;
+}
+
+div#main-content > div > span:nth-child(2) {
+  display: grid;
+  grid-area: 1/3/2/4;
+  align-items: center;
+}
+
+div#main-content > div > span:nth-child(3) {
+  display: grid;
+  grid-area: 9/3/10/4;
+  align-items: center;
+}
+
+div.Super {
+  grid-area: 2/1/6/2;
+}
+
+div.Less {
+  grid-area: 2/2/6/3;
+}
+
+div.Site {
+  grid-area: 2/3/9/4;
+}
+
+div.Impossible {
+  grid-area: 7/1/11/2;
+}
+
+div.Easy {
+  grid-area: 7/2/11/3;
+}
+
+div.Tegan {
+  grid-area: 10/3/16/4;
+}
+
+div.Impossible {
+  grid-area: 7/1/11/2;
+}
+
+div.Ad {
+  grid-area: 12/1/16/2;
+}
+
+div.Money {
+  grid-area: 12/2/16/3;
+}
+
+div.tegan-grid {
+  display: grid;
+  grid-template: repeat(4, 1fr) / 1fr;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.tegan-grid-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tegan-first {
+  margin-right: 5px;
+  border-bottom: 3px solid #e2e8f0;
+}
+
+#tegan-second {
+  border-bottom: 3px solid #e2e8f0;
+}
+
+#tegan-third {
+  border-bottom: 3px solid #e2e8f0;
+}
+
+#tegan-fourth {
+  margin-right: 35px;
+}
+
+.user {
+  font-weight: 100;
+  color: grey;
+}
+
+.Super,
+.Less,
+.Impossible,
+.Easy,
+.Ad,
+.Money {
+  display: grid;
+  grid-template: 2/1;
+}
+
+main {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main > svg {
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+div.cards.Site {
+  display: grid;
+  grid-template: repeat(3, minmax(50px, 1fr)) / 1fr;
+}
+
+div.site-margin {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.site-margin-border {
+  border-bottom: 3px solid #e2e8f0;
+}
+
+div.cards {
+  display: grid;
+  background-color: #fff;
+  border-left: 8px solid blueviolet;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div.cards > p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cards:hover {
+  box-shadow: 5px 5px 6px #c4b5fd;
+}
+
+p + span {
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 30px;
+  font-size: 14px;
+  font-weight: 200;
+  color: #6b7280;
+}
+
+pre + span {
+  font-size: 14px;
+  font-weight: 200;
+  color: #6b7280;
 }
